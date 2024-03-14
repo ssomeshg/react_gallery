@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import one from './assets/image/task.jpg';
-import two from './assets/image/img2.jpg';
+import one from './assets/image/dog1.jpg';
+import two from './assets/image/dog2.jpeg';
+import three from './assets/image/dog3.webp';
+import four from './assets/image/dog4.webp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function Gallery(names){
   return(
-  <div style={{display:"flex"}}>
-      <div style={{backgroundColor:"white", width:"200px", border:"1px solid black"}}>
-      <img src={names.myimage} style={{width:"100%"}}></img>
-      <p >{names.myname}</p>
+ 
+      <div style={{backgroundColor:"white", border:"1px solid black",padding:"5px"}}>
+      <img src={names.myimage} style={{width:"100%",height:"180px",objectFit:"cover"}}></img>
+      <p style={{textAlign:"center"}}>{names.myname}</p>
     </div>
-  </div>
+ 
   )
 }
 
@@ -42,12 +44,43 @@ function Gallery(names){
 var person = [
    {
     photo: one,
-    names: "henry"
+    names: "Julies Rabbit Ears"
     
    },
    {
     photo: two,
-    names: "john"
+    names: "The innocent Look "
+    
+   },
+   {
+    photo: three,
+    names: "Big Buggy"
+    
+   },
+   {
+    photo: four,
+    names: "The saint Doggo"
+    
+   },
+   {
+    photo: one,
+    names: "Julies Rabbit Ears"
+    
+   },
+   {
+    photo: three,
+    names: "Big Buggy"
+    
+   },
+   {
+    photo: two,
+    names: "The innocent Look "
+    
+   },
+  
+   {
+    photo: four,
+    names: "The saint Doggo"
     
    }
   
@@ -64,10 +97,10 @@ root.render(
 
   // </div>
 
- <div>
+ <div style={{display:"grid",justifyContent:"center",gap:"20px",gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
 {
   person.map(function(items,index){
-    return <div style={{display:"flex"}}>
+    return <div style={{display:"inline-block" }}>
       <Gallery myimage ={items.photo} myname ={items.names}></Gallery>
     </div>
 
